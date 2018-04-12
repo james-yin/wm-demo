@@ -1,0 +1,29 @@
+[
+  '{{repeat(3)}}',
+  {
+    id: '{{objectId()}}',
+    materialNumber: '{{lorem(1, "words")}}',
+    imageFile: '{{lorem(1, "words")}}',
+    isSample: '{{bool()}}',
+    specifications: '{{lorem(1, "words")}}',
+    materialName: '{{lorem(1, "words")}}',
+    purchaseUnit: 'KG',
+    purchaseQuantity: '{{integer(1, 1000)}}',
+    standardUnit: 'KG',
+    standardQuantity: '{{integer(1, 1000)}}',
+    deliveryLocation: '{{lorem(1, "words")}}',
+    packaging: '{{lorem(1, "words")}}',
+    recommendedSupplier: '{{lorem(1, "words")}}',
+    isOpenOrder: '{{bool()}}',
+    isQualifiedSupplier: '{{bool()}}',
+    isSameQualityButCheaper: '{{bool()}}',
+    isTimingReliable: '{{bool()}}',
+    isDeliveryReliable: '{{bool()}}',
+    isQuantityReliable: '{{bool()}}',
+    isOnlySupplier: '{{bool()}}',
+    isTestSupplier: '{{bool()}}',
+    isTestMaterial: '{{bool()}}',
+    isOtherReason: '{{bool()}}',
+    otherReasoNote: '{{lorem(4, "words")}}'
+  }
+]
