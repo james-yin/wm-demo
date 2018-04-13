@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { DataService } from '../data.service';
+
 import * as _ from "lodash";
 
 @Component({
@@ -7,11 +9,14 @@ import * as _ from "lodash";
   templateUrl: './po-summary.component.html'
 })
 export class PoSummaryComponent implements OnInit {
+  poSummary: any;
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    console.log('lodash version:', _.VERSION);
+    this.dataService.getPoSummaryData().subscribe(data => {
+      this.poSummary = data;
+    });
   }
 
 }
