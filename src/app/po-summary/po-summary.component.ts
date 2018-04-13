@@ -9,13 +9,14 @@ import * as _ from "lodash";
   templateUrl: './po-summary.component.html'
 })
 export class PoSummaryComponent implements OnInit {
-  poSummary: any;
+  poSummary: any[];
 
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
     this.dataService.getPoSummaryData().subscribe(data => {
       this.poSummary = data;
+      console.log(this.poSummary);
     });
   }
 
