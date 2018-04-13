@@ -1,3 +1,52 @@
-<pre>
-  {{ poSummary|json }}
-</pre>
+<div class="container-fluid">
+  <div class="row">
+    <p class="font-weight-bold">请购汇总</p>
+  </div>
+  <div class="row">
+		<p-table
+      [columns]="cols"
+      [value]="poSummary"
+      dataKey="id"
+      [resizableColumns]="true"
+      selectionMode="single"
+      [(selection)]="selectedSummary"
+      (onRowSelect)="onRowSelect($event)">
+			<ng-template pTemplate="header" let-columns>
+				<tr>
+					<th style="width: 1.5em"></th>
+					<th *ngFor="let col of columns" pResizableColumn>
+						{{ col.header }}
+					</th>
+				</tr>
+			</ng-template>
+			<ng-template pTemplate="body"
+        let-rowData
+        let-expanded="expanded"
+        let-columns="columns"
+        [pSelectableRow]="rowData">
+				<tr [pSelectableRow]="rowData">
+					<td style="padding: 0">
+						<a href="#" [pRowToggler]="rowData">
+							<i [ngClass]="expanded ?
+                        'fa fa-fw fa-chevron-circle-down' :
+                        'fa fa-fw fa-chevron-circle-right'"></i>
+						</a>
+					</td>
+					<td *ngFor="let col of columns"
+            class="ui-resizable-column">
+						{{ rowData[col.field] }}
+					</td>
+				</tr>
+			</ng-template>
+			<ng-template pTemplate="rowexpansion"
+        let-rowData
+        let-columns="columns">
+				<tr>
+					<td [attr.colspan]="columns.length + 1">
+            .....
+					</td>
+				</tr>
+			</ng-template>
+		</p-table>
+	</div>
+</div>
