@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="form-check form-check-inline" class="col">
+      <input class="form-check-input" type="checkbox" id="isQualifiedSupplier"
+        [(ngModel)]="poSummaryItem.isQualifiedSupplier">
+      <label class="form-check-label" for="isQualifiedSupplier">合格供应商</label>
+    </div>
+    <div class="form-check form-check-inline" class="col">
+      <input class="form-check-input" type="checkbox" id="isSameQualityButCheaper"
+        [(ngModel)]="poSummaryItem.isSameQualityButCheaper">
+      <label class="form-check-label" for="isSameQualityButCheaper">在品质相同情况下,单价相对便宜</label>
+    </div>
+    <div class="form-check form-check-inline" class="col">
+      <input class="form-check-input" type="checkbox" id="isTimingReliable"
+        [(ngModel)]="poSummaryItem.isTimingReliable">
+      <label class="form-check-label" for="isTimingReliable">时间准确性相对于其他供应商高</label>
+    </div>
+    <div class="form-check form-check-inline" class="col">
+      <input class="form-check-input" type="checkbox" id="isDeliveryReliable"
+        [(ngModel)]="poSummaryItem.isDeliveryReliable">
+      <label class="form-check-label" for="isDeliveryReliable">交货准确性相对于其他供应商高</label>
+    </div>
+    <div class="form-check form-check-inline" class="col">
+      <input class="form-check-input" type="checkbox" id="isQuantityReliable"
+        [(ngModel)]="poSummaryItem.isQuantityReliable">
+      <label class="form-check-label" for="isQuantityReliable">数量准确性相对于其他供应商高</label>
+    </div>
+    <div class="form-check form-check-inline" class="col">
+      <input class="form-check-input" type="checkbox" id="isOnlySupplier"
+        [(ngModel)]="poSummaryItem.isOnlySupplier">
+      <label class="form-check-label" for="isOnlySupplier">唯一供应商</label>
+    </div>
+    <div class="form-check form-check-inline" class="col">
+      <input class="form-check-input" type="checkbox" id="isTestSupplier"
+        [(ngModel)]="poSummaryItem.isTestSupplier">
+      <label class="form-check-label" for="isTestSupplier">测试供应商</label>
+    </div>
+    <div class="form-check form-check-inline" class="col">
+      <input class="form-check-input" type="checkbox" id="isTestMaterial"
+        [(ngModel)]="poSummaryItem.isTestMaterial">
+      <label class="form-check-label" for="isTestMaterial">测试材料</label>
+    </div>
+    <div class="form-check form-check-inline" class="col">
+      <input class="form-check-input" type="checkbox" id="isOtherReason"
+        [(ngModel)]="poSummaryItem.isOtherReason">
+      <label class="form-check-label" for="isOtherReason">其他原因</label>
+    </div>
+  </div>
+</div>

@@ -11,11 +11,13 @@ import { ButtonModule } from 'primeng/button';
 import { AppComponent } from './app.component';
 import { DataService } from './data.service'
 import { PoSummaryComponent } from './po-summary/po-summary.component';
+import { PoSuggestionComponent } from './po-suggestion/po-suggestion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PoSummaryComponent
+    PoSummaryComponent,
+    PoSuggestionComponent
   ],
   imports: [
     BrowserModule,
