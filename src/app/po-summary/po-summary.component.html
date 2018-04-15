@@ -1,7 +1,5 @@
 <div class="container-fluid">
-  <div class="row">
-    <p class="font-weight-bold">请购汇总</p>
-  </div>
+  <div class="row font-weight-bold">请购汇总</div>
   <div class="row">
 		<p-table
       [columns]="cols"
@@ -43,7 +41,12 @@
 				<tr>
 					<td [attr.colspan]="columns.length + 1">
 						<app-po-suggestion [poSummaryItem]="rowData"></app-po-suggestion>
+						<p></p>
+						<div class="font-weight-bold">送货明细</div>
 						<app-po-detail [poDetails]="rowData.deliveryDetails"></app-po-detail>
+						<p></p>
+						<div class="font-weight-bold">报价单</div>
+						<app-price-quote [priceQuotes]="rowData.priceQuotes"></app-price-quote>
 					</td>
 				</tr>
 			</ng-template>
