@@ -32,8 +32,7 @@
                         'fa fa-fw fa-chevron-circle-right'"></i>
 						</a>
 					</td>
-					<td *ngFor="let col of columns"
-            class="ui-resizable-column">
+					<td *ngFor="let col of columns" class="ui-resizable-column">
 						{{ rowData[col.field] }}
 					</td>
 				</tr>
@@ -43,7 +42,8 @@
         let-columns="columns">
 				<tr>
 					<td [attr.colspan]="columns.length + 1">
-            <app-po-suggestion [poSummaryItem]="rowData"></app-po-suggestion>
+						<app-po-suggestion [poSummaryItem]="rowData"></app-po-suggestion>
+						<app-po-detail [poDetails]="rowData.deliveryDetails"></app-po-detail>
 					</td>
 				</tr>
 			</ng-template>

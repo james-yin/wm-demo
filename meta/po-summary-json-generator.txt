@@ -24,6 +24,25 @@
     isTestSupplier: '{{bool()}}',
     isTestMaterial: '{{bool()}}',
     isOtherReason: '{{bool()}}',
-    otherReasoNote: '{{lorem(4, "words")}}'
+    otherReasoNote: '{{lorem(4, "words")}}',
+    deliveryDetails: [
+      '{{repeat(2, 4)}}',
+      {
+        id: '{{index()}}',
+        supplier: '{{lorem(1, "words")}}',
+		    quoteNumber: '{{integer(1, 1000)}}',
+        requestQuantity: '{{integer(1, 1000)}}',
+        standardQuantity: '{{integer(1, 1000)}}',
+        estimatedDeliveryDate: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-dd")}}',
+        isInvoiced: '{{bool()}}',
+        invoiceCompany: '{{lorem(1, "words")}}',
+        invoiceTitle: '{{lorem(1, "words")}}',
+        taxRate: '{{floating(0, 10, 2)}}',
+        priceIncludingTax: '{{floating(100, 10000, 2)}}',
+        paymentType: '{{lorem(1, "words")}}',
+        excludingTaxAtFactory: '{{floating(100, 10000, 2)}}',
+        includingTaxAtFactory: '{{floating(100, 10000, 2)}}'
+      }
+    ]
   }
 ]
