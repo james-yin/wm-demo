@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { poSummaryData } from '../data/po-summary-data';
+import { DataService } from '../data.service';
 
 import * as _ from "lodash";
 
@@ -14,10 +14,10 @@ export class PoSummaryComponent implements OnInit {
   selectedSummary: any;
   displayDialog = false;
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.poSummary = poSummaryData;
+    this.getPoSummaryData();
     this.setUpCols();
   }
 
@@ -37,6 +37,13 @@ export class PoSummaryComponent implements OnInit {
       { field: 'recommendedSupplier', header: '建议供应商' },
       { field: 'isOpenOrder', header: '已開訂單' },
     ];
+  }
+
+  getPoSummaryData() {
+    this.dataService.getPoSummaryData().subscribe(data => {
+      this.poSummary = data;
+      console.log(this.poSummary);
+    });
   }
 
   onRowSelect(event) {
