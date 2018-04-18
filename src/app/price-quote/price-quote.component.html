@@ -1,5 +1,8 @@
-<div>
+<div style="margin-left: 1rem">
   <p-table [columns]="cols" [value]="priceQuotes" dataKey="id" [resizableColumns]="true">
+    <ng-template pTemplate="caption">
+        <span class="text-white">报价单</span>
+    </ng-template>
     <ng-template pTemplate="header" let-columns>
       <tr>
         <th *ngFor="let col of columns" pResizableColumn>

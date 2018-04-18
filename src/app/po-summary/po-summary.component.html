@@ -1,14 +1,19 @@
 <div class="container-fluid">
-  <div class="row font-weight-bold">请购汇总</div>
-  <div class="row">
+  	<!-- <nav class="row navbar navbar-dark bg-primary">
+		<span class="navbar-brand">请购汇总</span>
+	</nav> -->
+  	<div class="row">
 		<p-table
-      [columns]="cols"
-      [value]="poSummary"
-      dataKey="id"
-      [resizableColumns]="true"
-      selectionMode="single"
-      [(selection)]="selectedSummary"
-      (onRowSelect)="onRowSelect($event)">
+			[columns]="cols"
+			[value]="poSummary"
+			dataKey="id"
+			[resizableColumns]="true"
+			selectionMode="single"
+			[(selection)]="selectedSummary"
+			(onRowSelect)="onRowSelect($event)">
+			<ng-template pTemplate="caption">
+				<span class="text-white">请购汇总</span>
+			</ng-template>
 			<ng-template pTemplate="header" let-columns>
 				<tr>
 					<th style="width: 1.5em"></th>
@@ -18,10 +23,10 @@
 				</tr>
 			</ng-template>
 			<ng-template pTemplate="body"
-        let-rowData
-        let-expanded="expanded"
-        let-columns="columns"
-        [pSelectableRow]="rowData">
+				let-rowData
+				let-expanded="expanded"
+				let-columns="columns"
+				[pSelectableRow]="rowData">
 				<tr [pSelectableRow]="rowData">
 					<td style="padding: 0">
 						<a href="#" [pRowToggler]="rowData">
@@ -36,17 +41,16 @@
 				</tr>
 			</ng-template>
 			<ng-template pTemplate="rowexpansion"
-        let-rowData
-        let-columns="columns">
+				let-rowData
+				let-columns="columns">
 				<tr>
 					<td [attr.colspan]="columns.length + 1">
 						<app-po-suggestion [poSummaryItem]="rowData"></app-po-suggestion>
 						<p></p>
-						<div class="font-weight-bold">送货明细</div>
 						<app-po-detail [poDetails]="rowData.deliveryDetails"></app-po-detail>
 						<p></p>
-						<div class="font-weight-bold">报价单</div>
 						<app-price-quote [priceQuotes]="rowData.priceQuotes"></app-price-quote>
+						<p></p>
 					</td>
 				</tr>
 			</ng-template>
