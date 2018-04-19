@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { DataService } from '../data.service';
-
+import { ConfirmationService, Message } from 'primeng/api';
 import * as _ from "lodash";
+
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-po-summary',
@@ -13,12 +14,26 @@ export class PoSummaryComponent implements OnInit {
   poSummary: any[];
   selectedSummary: any;
   displayDialog = false;
-
-  constructor(private dataService: DataService) { }
+  msgs: Message[] = [];
+  
+  constructor(
+    private dataService: DataService,
+    private confirmationService: ConfirmationService
+  ) { }
 
   ngOnInit() {
     this.getPoSummaryData();
     this.setUpCols();
+  }
+
+  confirm() {
+    this.confirmationService.confirm({
+        message: '确定要删除此记录吗?',
+        accept: () => {
+            this.displayDialog = false;
+            this.msgs = [{severity:'info', summary:'确认', detail:'此记录已删除'}];
+        }
+    });
   }
 
   setUpCols() {
@@ -42,7 +57,6 @@ export class PoSummaryComponent implements OnInit {
   getPoSummaryData() {
     this.dataService.getPoSummaryData().subscribe(data => {
       this.poSummary = data;
-      console.log(this.poSummary);
     });
   }
 
@@ -50,4 +64,7 @@ export class PoSummaryComponent implements OnInit {
     this.displayDialog = true;
   }
 
+  save() {
+    this.displayDialog = false;
+  }
 }

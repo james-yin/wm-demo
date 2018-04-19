@@ -54,3 +54,32 @@
 		</p-table>
 	</div>
 </div>
+
+<p-dialog
+	header="People Details"
+	[(visible)]="displayDialog"
+	[responsive]="true"
+	showEffect="fade"
+	[modal]="true"
+	[width]="400">
+	<div class="ui-g ui-fluid" *ngIf="selectedSummary">
+		...
+	</div>
+	<p-footer>
+		<div class="ui-dialog-buttonpane ui-helper-clearfix">
+			<button type="button" pButton icon="fa fa-trash"
+				(click)="confirm()" label="删除" class="ui-button-warning"></button>
+			<button type="button" pButton icon="fa fa-save"
+				(click)="save()" label="保存"></button>
+		</div>
+	</p-footer>
+</p-dialog>
+
+<p-confirmDialog header="确认" icon="fa fa-trash" #cd>
+	<p-footer>
+		<button type="button" pButton icon="fa-check" label="确定" (click)="cd.accept()"></button>
+		<button type="button" pButton icon="fa-close" label="取消" (click)="cd.reject()"></button>
+	</p-footer>
+</p-confirmDialog>
+
+<p-growl [value]="msgs"></p-growl>

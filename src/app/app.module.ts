@@ -7,6 +7,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService } from 'primeng/api';
+import { GrowlModule } from 'primeng/growl';
 
 import { AppComponent } from './app.component';
 import { DataService } from './data.service'
@@ -30,9 +33,14 @@ import { PriceQuoteComponent } from './price-quote/price-quote.component';
     HttpClientModule,
     TableModule,
     DialogModule,
-    ButtonModule
+    ButtonModule,
+    ConfirmDialogModule,
+    GrowlModule
   ],
-  providers: [DataService],
+  providers: [
+    DataService,
+    ConfirmationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
