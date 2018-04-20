@@ -66,5 +66,6 @@ export class PoSummaryComponent implements OnInit {
 
   save() {
     this.displayDialog = false;
+    this.msgs = [{severity:'info', summary:'确认', detail:'此记录已保存'}];
   }
 }

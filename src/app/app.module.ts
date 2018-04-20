@@ -17,6 +17,7 @@ import { PoSummaryComponent } from './po-summary/po-summary.component';
 import { PoSuggestionComponent } from './po-suggestion/po-suggestion.component';
 import { PoDetailComponent } from './po-detail/po-detail.component';
 import { PriceQuoteComponent } from './price-quote/price-quote.component';
+import { PoEditComponent } from './po-edit/po-edit.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PriceQuoteComponent } from './price-quote/price-quote.component';
     PoSummaryComponent,
     PoSuggestionComponent,
     PoDetailComponent,
-    PriceQuoteComponent
+    PriceQuoteComponent,
+    PoEditComponent
   ],
   imports: [
     BrowserModule,

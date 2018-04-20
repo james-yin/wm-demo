@@ -1,0 +1,68 @@
+<form *ngIf="po">
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="materialNumber">物料编号</label>
+      <input class="form-control" id="materialNumber" name="materialNumber" [(ngModel)]="po.materialNumber">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="imageFile">图档</label>
+      <input class="form-control" id="imageFile" name="imageFile" [(ngModel)]="po.imageFile">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="specifications">规格型号</label>
+      <input class="form-control" id="specifications" name="specifications" [(ngModel)]="po.specifications">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="materialName">物料名称</label>
+      <input class="form-control" id="materialName" name="materialName" [(ngModel)]="po.materialName">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="purchaseUnit">请购单位</label>
+      <input class="form-control" id="purchaseUnit" name="purchaseUnit" [(ngModel)]="po.purchaseUnit">
+    </div>
+    <div class="form-group col-md-3">
+        <label for="purchaseQuantity">请购数量</label>
+        <input class="form-control" id="purchaseQuantity" name="purchaseQuantity" [(ngModel)]="po.purchaseQuantity">
+    </div>
+    <div class="form-group col-md-3">
+        <label for="standardUnit">标准单位</label>
+        <input class="form-control" id="standardUnit" name="standardUnit" [(ngModel)]="po.standardUnit">
+    </div>
+    <div class="form-group col-md-3">
+        <label for="standardQuantity">标准数量</label>
+        <input class="form-control" id="standardQuantity" name="standardQuantity" [(ngModel)]="po.standardQuantity">
+    </div>  
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="deliveryLocation">送货地点</label>
+      <input class="form-control" id="deliveryLocation" name="deliveryLocation" [(ngModel)]="po.deliveryLocation">
+    </div>
+    <div class="form-group col-md-3">
+        <label for="packaging">包裝</label>
+        <input class="form-control" id="packaging" name="packaging" [(ngModel)]="po.packaging">
+    </div>
+    <div class="form-group col-md-3">
+        <label for="recommendedSupplier">建议供应商</label>
+        <input class="form-control" id="recommendedSupplier" name="recommendedSupplier" [(ngModel)]="po.recommendedSupplier">
+    </div>
+    <div class="form-group col-md-3">
+    </div>  
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="isSample">
+        <label class="form-check-label" for="isSample">样品</label>
+      </div>
+    </div>
+    <div class="form-group col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="isOpenOrder">
+        <label class="form-check-label" for="isOpenOrder">已開訂單</label>
+      </div>
+    </div>
+  </div>
+</form>
