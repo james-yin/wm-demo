@@ -1,45 +1,37 @@
 <div style="margin-left: 1rem">
-    <p-table
-      [columns]="cols"
-      [value]="poDetails"
-      dataKey="id"
-      [resizableColumns]="true">
-      <ng-template pTemplate="caption">
-          <span class="text-white">送货明细</span>
-      </ng-template>  
-      <ng-template pTemplate="header" let-columns>
-        <tr>
-          <th style="width: 1.5em"></th>
-          <th *ngFor="let col of columns" pResizableColumn>
-            {{ col.header }}
-          </th>
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="body"
-        let-rowData
-        let-expanded="expanded"
-        let-columns="columns">
-        <tr>
-          <td style="padding: 0">
-              <a href="#" [pRowToggler]="rowData">
-                <i [ngClass]="expanded ?
+  <p-table [columns]="cols" [value]="poDetails" dataKey="id" [resizableColumns]="true">
+    <ng-template pTemplate="caption">
+      <span class="text-white">送货明细 - 合并</span>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th style="width: 1.5em"></th>
+        <th *ngFor="let col of columns" pResizableColumn>
+          {{ col.header }}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-expanded="expanded" let-columns="columns">
+      <tr>
+        <td style="padding: 0">
+          <a href="#" [pRowToggler]="rowData">
+            <i [ngClass]="expanded ?
                           'fa fa-fw fa-chevron-circle-down' :
                           'fa fa-fw fa-chevron-circle-right'"></i>
-              </a>
-          </td>
-          <td *ngFor="let col of columns" class="ui-resizable-column">
-              {{ rowData[col.field] }}
-          </td>
-        </tr>
-      </ng-template>
-			<ng-template pTemplate="rowexpansion"
-        let-rowData
-        let-columns="columns">
-				<tr>
-					<td [attr.colspan]="columns.length + 1">
-            ...
-					</td>
-				</tr>
-			</ng-template>
-    </p-table>
+          </a>
+        </td>
+        <td *ngFor="let col of columns" class="ui-resizable-column">
+          {{ rowData[col.field] }}
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns">
+      <tr>
+        <td [attr.colspan]="columns.length + 1">
+          <app-po-detail-item [items]="rowData.detailItems"></app-po-detail-item>
+          <p></p>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
 </div>
