@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ConfirmationService, Message } from 'primeng/api';
-import * as _ from "lodash";
+import * as _ from 'lodash';
 
 import { DataService } from '../data.service';
 
@@ -15,11 +15,11 @@ export class PoSummaryComponent implements OnInit {
   selectedSummary: any;
   displayDialog = false;
   msgs: Message[] = [];
-  
+
   constructor(
     private dataService: DataService,
     private confirmationService: ConfirmationService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.getPoSummaryData();
@@ -28,11 +28,13 @@ export class PoSummaryComponent implements OnInit {
 
   confirm() {
     this.confirmationService.confirm({
-        message: '确定要删除此记录吗?',
-        accept: () => {
-            this.displayDialog = false;
-            this.msgs = [{severity:'info', summary:'确认', detail:'此记录已删除'}];
-        }
+      message: '确定要删除此记录吗?',
+      accept: () => {
+        this.displayDialog = false;
+        this.msgs = [
+          { severity: 'info', summary: '确认', detail: '此记录已删除' }
+        ];
+      }
     });
   }
 
@@ -50,7 +52,7 @@ export class PoSummaryComponent implements OnInit {
       { field: 'deliveryLocation', header: '送货地点' },
       { field: 'packaging', header: '包裝' },
       { field: 'recommendedSupplier', header: '建议供应商' },
-      { field: 'isOpenOrder', header: '已開訂單' },
+      { field: 'isOpenOrder', header: '已開訂單' }
     ];
   }
 
@@ -66,6 +68,21 @@ export class PoSummaryComponent implements OnInit {
 
   save() {
     this.displayDialog = false;
-    this.msgs = [{severity:'info', summary:'确认', detail:'此记录已保存'}];
+    this.msgs = [{ severity: 'info', summary: '确认', detail: '此记录已保存' }];
+  }
+
+  isBoolean(data) {
+    return typeof data === 'boolean';
+  }
+
+  getData(data) {
+    if (typeof data === 'boolean') {
+      if (data) {
+        return '<i class="fa fa-check"></i>';
+      } else {
+        return '<i class="fa fa-times"></i>';
+      }
+    }
+    return data;
   }
 }

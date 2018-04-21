@@ -1,86 +1,63 @@
 <div class="container-fluid">
-  	<div class="row">
-		<p-table
-			[columns]="cols"
-			[value]="poSummary"
-			dataKey="id"
-			[resizableColumns]="true"
-			selectionMode="single"
-			[(selection)]="selectedSummary"
-			(onRowSelect)="onRowSelect($event)">
-			<ng-template pTemplate="caption">
-				<span class="text-white">请购汇总</span>
-			</ng-template>
-			<ng-template pTemplate="header" let-columns>
-				<tr>
-					<th style="width: 1.5em"></th>
-					<th *ngFor="let col of columns" pResizableColumn>
-						{{ col.header }}
-					</th>
-				</tr>
-			</ng-template>
-			<ng-template pTemplate="body"
-				let-rowData
-				let-expanded="expanded"
-				let-columns="columns"
-				[pSelectableRow]="rowData">
-				<tr [pSelectableRow]="rowData">
-					<td style="padding: 0">
-						<a href="#" [pRowToggler]="rowData">
-							<i [ngClass]="expanded ?
+  <div class="row">
+    <p-table [columns]="cols" [value]="poSummary" dataKey="id" [resizableColumns]="true" selectionMode="single" [(selection)]="selectedSummary"
+      (onRowSelect)="onRowSelect($event)">
+      <ng-template pTemplate="caption">
+        <span class="text-white">请购汇总</span>
+      </ng-template>
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th style="width: 1.5em"></th>
+          <th *ngFor="let col of columns" pResizableColumn>
+            {{ col.header }}
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-expanded="expanded" let-columns="columns" [pSelectableRow]="rowData">
+        <tr [pSelectableRow]="rowData">
+          <td style="padding: 0">
+            <a href="#" [pRowToggler]="rowData">
+              <i [ngClass]="expanded ?
                         'fa fa-fw fa-chevron-circle-down' :
                         'fa fa-fw fa-chevron-circle-right'"></i>
-						</a>
-					</td>
-					<td *ngFor="let col of columns" class="ui-resizable-column">
-						{{ rowData[col.field] }}
-					</td>
-				</tr>
-			</ng-template>
-			<ng-template pTemplate="rowexpansion"
-				let-rowData
-				let-columns="columns">
-				<tr>
-					<td [attr.colspan]="columns.length + 1">
-						<app-po-suggestion [poSummaryItem]="rowData"></app-po-suggestion>
-						<p></p>
-						<app-po-detail [poDetails]="rowData.deliveryDetails"></app-po-detail>
-						<p></p>
-						<app-price-quote [priceQuotes]="rowData.priceQuotes"></app-price-quote>
-						<p></p>
-					</td>
-				</tr>
-			</ng-template>
-		</p-table>
-	</div>
+            </a>
+          </td>
+          <td *ngFor="let col of columns" class="ui-resizable-column">
+            <div [class.text-center]="isBoolean(rowData[col.field])" [innerHTML]=[getData(rowData[col.field])]></div>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns">
+        <tr>
+          <td [attr.colspan]="columns.length + 1">
+            <app-po-suggestion [poSummaryItem]="rowData"></app-po-suggestion>
+            <p></p>
+            <app-po-detail [poDetails]="rowData.deliveryDetails"></app-po-detail>
+            <p></p>
+            <app-price-quote [priceQuotes]="rowData.priceQuotes"></app-price-quote>
+            <p></p>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
 </div>
 
-<p-dialog
-	header="请购编辑"
-	[(visible)]="displayDialog"
-	[responsive]="true"
-	showEffect="fade"
-	[modal]="true"
-	[width]="640">
-	<app-po-edit [po]="selectedSummary"></app-po-edit>
-	<!-- <div class="ui-g ui-fluid" *ngIf="selectedSummary">
-		...
-	</div> -->
-	<p-footer>
-		<div class="ui-dialog-buttonpane ui-helper-clearfix">
-			<button type="button" pButton icon="fa fa-trash"
-				(click)="confirm()" label="删除" class="ui-button-warning"></button>
-			<button type="button" pButton icon="fa fa-save"
-				(click)="save()" label="保存"></button>
-		</div>
-	</p-footer>
+<p-dialog header="请购编辑" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" [width]="640">
+  <app-po-edit [po]="selectedSummary"></app-po-edit>
+  <p-footer>
+    <div class="ui-dialog-buttonpane ui-helper-clearfix">
+      <button type="button" pButton icon="fa fa-trash" (click)="confirm()" label="删除" class="ui-button-warning"></button>
+      <button type="button" pButton icon="fa fa-save" (click)="save()" label="保存"></button>
+    </div>
+  </p-footer>
 </p-dialog>
 
 <p-confirmDialog header="确认" icon="fa fa-trash" #cd>
-	<p-footer>
-		<button type="button" pButton icon="fa-check" label="确定" (click)="cd.accept()"></button>
-		<button type="button" pButton icon="fa-close" label="取消" (click)="cd.reject()"></button>
-	</p-footer>
+  <p-footer>
+    <button type="button" pButton icon="fa-check" label="确定" (click)="cd.accept()"></button>
+    <button type="button" pButton icon="fa-close" label="取消" (click)="cd.reject()"></button>
+  </p-footer>
 </p-confirmDialog>
 
 <p-growl [value]="msgs"></p-growl>
