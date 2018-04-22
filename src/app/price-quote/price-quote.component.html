@@ -8,6 +8,7 @@
         <th *ngFor="let col of columns" pResizableColumn>
           {{ col.header }}
         </th>
+        <th>查看</th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-columns="columns">
@@ -15,7 +16,27 @@
         <td *ngFor="let col of columns" class="ui-resizable-column">
           <div [class.text-center]="helper.isBoolean(rowData[col.field])" [innerHTML]="helper.getCustomRender(rowData[col.field])"></div>
         </td>
+        <td style="width: 25px;">
+          <button type=" button " class="btn btn-outline-info btn-sm" (click)='showIamgesDialog()'>上传文件</button>
+          <button type="button " class="btn btn-outline-info btn-sm" (click)='showQuotesDialog()'>开票信息</button>
+        </td>
       </tr>
     </ng-template>
   </p-table>
 </div>
+
+<p-dialog header="上传文件" [(visible)]="displayImagesDialog" modal="modal" [responsive]="true" [width]="640" [minWidth]="320"
+  [minY]="70">
+  <img src="/assets/images/Zhongshan968.jpg" width="580">
+  <p-footer>
+    <button type="button" pButton icon="fa-check" (click)="displayImagesDialog=false" label="OK"></button>
+  </p-footer>
+</p-dialog>
+
+<p-dialog header="开票信息" [(visible)]="displayQuotesDialog" modal="modal" [responsive]="true" [width]="640" [minWidth]="320"
+  [minY]="70">
+  <span>开票信息...</span>
+  <p-footer>
+    <button type="button" pButton icon="fa-check" (click)="displayQuotesDialog=false" label="OK"></button>
+  </p-footer>
+</p-dialog>
