@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { ConfirmationService, Message } from 'primeng/api';
+
 import { HelperService } from '../shared/helper.service';
 
 @Component({
@@ -9,8 +11,15 @@ import { HelperService } from '../shared/helper.service';
 export class PoDetailComponent implements OnInit {
   @Input() poDetails: any[];
   cols: any[];
+  selectedDetail: any;
+  displayDetailDialog = false;
+  msgs: Message[] = [];
+  dt: Date;
 
-  constructor(public helper: HelperService) {}
+  constructor(
+    private confirmationService: ConfirmationService,
+    public helper: HelperService
+  ) {}
 
   ngOnInit() {
     this.setUpCols();
@@ -32,5 +41,30 @@ export class PoDetailComponent implements OnInit {
       { field: 'excludingTaxAtFactory', header: '不含税-本厂' },
       { field: 'includingTaxAtFactory', header: '含税-本厂' }
     ];
+  }
+
+  confirm() {
+    this.confirmationService.confirm({
+      message: '确定要删除此记录吗?',
+      accept: () => {
+        this.displayDetailDialog = false;
+        this.msgs = [
+          {
+            severity: 'info',
+            summary: '确认',
+            detail: '此记录已删除'
+          }
+        ];
+      }
+    });
+  }
+
+  onRowSelect(event) {
+    this.dt = new Date(`${event.data['estimatedDeliveryDate']}T00:00:00`);
+    this.displayDetailDialog = true;
+  }
+
+  save() {
+    this.displayDetailDialog = false;
   }
 }

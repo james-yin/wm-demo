@@ -10,6 +10,7 @@ import { ButtonModule } from 'primeng/button';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
 import { GrowlModule } from 'primeng/growl';
+import { CalendarModule } from 'primeng/calendar';
 
 import { AppComponent } from './app.component';
 import { DataService } from './data.service';
@@ -40,7 +41,8 @@ import { PoDetailItemComponent } from './po-detail-item/po-detail-item.component
     DialogModule,
     ButtonModule,
     ConfirmDialogModule,
-    GrowlModule
+    GrowlModule,
+    CalendarModule
   ],
   providers: [DataService, ConfirmationService, HelperService],
   bootstrap: [AppComponent]

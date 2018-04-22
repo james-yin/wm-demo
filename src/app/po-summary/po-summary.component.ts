@@ -40,7 +40,8 @@ export class PoSummaryComponent implements OnInit {
             detail: '此记录已删除'
           }
         ];
-      }
+      },
+      reject: () => {}
     });
   }
 

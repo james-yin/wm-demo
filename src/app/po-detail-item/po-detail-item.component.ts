@@ -9,6 +9,7 @@ import { HelperService } from '../shared/helper.service';
 export class PoDetailItemComponent implements OnInit {
   @Input() items: any[];
   cols: any[];
+  selectedItem: any;
 
   constructor(public helper: HelperService) {}
 
@@ -32,5 +33,9 @@ export class PoDetailItemComponent implements OnInit {
       { field: 'excludingTaxAtFactory', header: '不含税-本厂' },
       { field: 'includingTaxAtFactory', header: '含税-本厂' }
     ];
+  }
+
+  onRowSelect(event) {
+    console.log('select');
   }
 }

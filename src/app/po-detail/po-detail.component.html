@@ -1,5 +1,6 @@
 <div style="margin-left: 1rem">
-  <p-table [columns]="cols" [value]="poDetails" dataKey="id" [resizableColumns]="true">
+  <p-table [columns]="cols" [value]="poDetails" dataKey="id" [resizableColumns]="true" selectionMode="single" [(selection)]="selectedDetail"
+    (onRowSelect)="onRowSelect($event)">
     <ng-template pTemplate="caption">
       <span class="text-white">送货明细 - 合并</span>
     </ng-template>
@@ -12,7 +13,7 @@
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-expanded="expanded" let-columns="columns">
-      <tr>
+      <tr [pSelectableRow]="rowData">
         <td style="padding: 0">
           <a href="#" [pRowToggler]="rowData">
             <i [ngClass]="expanded ?
@@ -36,3 +37,24 @@
     </ng-template>
   </p-table>
 </div>
+
+<p-dialog header="送货明细" [(visible)]="displayDetailDialog" *ngIf="selectedDetail" [responsive]="true" showEffect="fade" [modal]="true"
+  [width]="640">
+  <div style="height: 480px;">
+    <span>预计到货日期</span>
+    <p-calendar [(ngModel)]="dt" dateFormat="yy-mm-dd"></p-calendar>
+  </div>
+  <p-footer>
+    <div class="ui-dialog-buttonpane ui-helper-clearfix">
+      <button type="button" pButton icon="fa fa-trash" (click)="confirm()" label="删除" class="ui-button-warning"></button>
+      <button type="button" pButton icon="fa fa-save" (click)="save()" label="保存"></button>
+    </div>
+  </p-footer>
+</p-dialog>
+
+<p-confirmDialog header="确认" icon="fa fa-trash" #cd>
+  <p-footer>
+    <button type="button" pButton icon="fa-check" label="确定" (click)="cd.accept()"></button>
+    <button type="button" pButton icon="fa-close" label="取消" (click)="cd.reject()"></button>
+  </p-footer>
+</p-confirmDialog>
