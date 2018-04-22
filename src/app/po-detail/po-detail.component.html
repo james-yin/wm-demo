@@ -23,7 +23,6 @@
         </td>
         <td *ngFor="let col of columns" class="ui-resizable-column">
           <div [class.text-center]="helper.isBoolean(rowData[col.field])" [innerHTML]="helper.getCustomRender(rowData[col.field])"></div>
-          <!-- {{ rowData[col.field] }} -->
         </td>
       </tr>
     </ng-template>
