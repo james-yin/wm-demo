@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { HelperService } from '../shared/helper.service';
+
 @Component({
   selector: 'app-price-quote',
   templateUrl: './price-quote.component.html'
@@ -8,7 +10,7 @@ export class PriceQuoteComponent implements OnInit {
   @Input() priceQuotes: any[];
   cols: any[];
 
-  constructor() { }
+  constructor(public helper: HelperService) {}
 
   ngOnInit() {
     this.setUpCols();

@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { HelperService } from '../shared/helper.service';
+
 @Component({
   selector: 'app-po-detail-item',
   templateUrl: './po-detail-item.component.html'
@@ -8,7 +10,7 @@ export class PoDetailItemComponent implements OnInit {
   @Input() items: any[];
   cols: any[];
 
-  constructor() {}
+  constructor(public helper: HelperService) {}
 
   ngOnInit() {
     this.setUpCols();

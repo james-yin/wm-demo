@@ -13,7 +13,7 @@
     <ng-template pTemplate="body" let-rowData let-columns="columns">
       <tr>
         <td *ngFor="let col of columns" class="ui-resizable-column">
-          {{ rowData[col.field] }}
+          <div [class.text-center]="helper.isBoolean(rowData[col.field])" [innerHTML]="helper.getCustomRender(rowData[col.field])"></div>
         </td>
       </tr>
     </ng-template>

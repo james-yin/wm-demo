@@ -4,6 +4,7 @@ import { ConfirmationService, Message } from 'primeng/api';
 import * as _ from 'lodash';
 
 import { DataService } from '../data.service';
+import { HelperService } from '../shared/helper.service';
 
 @Component({
   selector: 'app-po-summary',
@@ -18,7 +19,8 @@ export class PoSummaryComponent implements OnInit {
 
   constructor(
     private dataService: DataService,
-    private confirmationService: ConfirmationService
+    private confirmationService: ConfirmationService,
+    public helper: HelperService
   ) {}
 
   ngOnInit() {
@@ -69,20 +71,5 @@ export class PoSummaryComponent implements OnInit {
   save() {
     this.displayDialog = false;
     this.msgs = [{ severity: 'info', summary: '确认', detail: '此记录已保存' }];
-  }
-
-  isBoolean(data) {
-    return typeof data === 'boolean';
-  }
-
-  getData(data) {
-    if (typeof data === 'boolean') {
-      if (data) {
-        return '<i class="fa fa-check"></i>';
-      } else {
-        return '<i class="fa fa-times"></i>';
-      }
-    }
-    return data;
   }
 }

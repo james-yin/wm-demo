@@ -12,7 +12,8 @@ import { ConfirmationService } from 'primeng/api';
 import { GrowlModule } from 'primeng/growl';
 
 import { AppComponent } from './app.component';
-import { DataService } from './data.service'
+import { DataService } from './data.service';
+import { HelperService } from './shared/helper.service';
 import { PoSummaryComponent } from './po-summary/po-summary.component';
 import { PoSuggestionComponent } from './po-suggestion/po-suggestion.component';
 import { PoDetailComponent } from './po-detail/po-detail.component';
@@ -41,10 +42,7 @@ import { PoDetailItemComponent } from './po-detail-item/po-detail-item.component
     ConfirmDialogModule,
     GrowlModule
   ],
-  providers: [
-    DataService,
-    ConfirmationService
-  ],
+  providers: [DataService, ConfirmationService, HelperService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

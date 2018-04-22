@@ -1,7 +1,7 @@
 <div style="margin-left: 1rem">
   <p-table [columns]="cols" [value]="priceQuotes" dataKey="id" [resizableColumns]="true">
     <ng-template pTemplate="caption">
-        <span class="text-white">报价单</span>
+      <span class="text-white">报价单</span>
     </ng-template>
     <ng-template pTemplate="header" let-columns>
       <tr>
@@ -13,7 +13,7 @@
     <ng-template pTemplate="body" let-rowData let-columns="columns">
       <tr>
         <td *ngFor="let col of columns" class="ui-resizable-column">
-          {{ rowData[col.field] }}
+          <div [class.text-center]="helper.isBoolean(rowData[col.field])" [innerHTML]="helper.getCustomRender(rowData[col.field])"></div>
         </td>
       </tr>
     </ng-template>
