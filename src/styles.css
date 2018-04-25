@@ -11,11 +11,12 @@
 /* @import '~font-awesome/css/font-awesome.css'; */
 
 * {
-  font-family: "微软雅黑", "Microsoft YaHei", STXihei, "华文细黑", Georgia, "Times New Roman", serif;
+  font-family: '微软雅黑', 'Microsoft YaHei', STXihei, '华文细黑', Georgia,
+    'Times New Roman', serif;
 }
 
 body {
-  margin: .5rem;
+  margin: 0.5rem;
 }
 
 .suggestion {
@@ -33,4 +34,8 @@ app-po-detail .ui-table-caption.ui-widget-header {
 
 app-price-quote .ui-table-caption.ui-widget-header {
   background: darkgray !important;
+}
+
+.ui-tabview-panel {
+  padding: 0.25rem 0 0 0 !important;
 }
