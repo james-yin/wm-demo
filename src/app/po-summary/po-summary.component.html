@@ -1,4 +1,5 @@
 <div class="container-fluid">
+  <!-- <button (click)='genPdf()'>PDF</button> -->
   <div class="row">
     <p-table [columns]="cols" [value]="poSummary" dataKey="id" [resizableColumns]="true" selectionMode="single" [(selection)]="selectedSummary"
       (onRowSelect)="onRowSelect($event)">

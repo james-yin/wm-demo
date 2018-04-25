@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { ConfirmationService, Message } from 'primeng/api';
 import * as _ from 'lodash';
+import * as pdfMake from 'pdfmake/build/pdfmake.js';
+import * as pdfFonts from 'pdfmake/build/vfs_fonts.js';
 
 import { DataService } from '../data.service';
 import { HelperService } from '../shared/helper.service';
@@ -26,6 +28,15 @@ export class PoSummaryComponent implements OnInit {
   ngOnInit() {
     this.getPoSummaryData();
     this.setUpCols();
+  }
+
+  genPdf() {
+    pdfMake.vfs = pdfFonts.pdfMake.vfs;
+    const docDefinition = {
+      content: [{ text: '请购汇总', style: 'header' }]
+    };
+    pdfMake.createPdf(docDefinition).open();
+    // pdfMake.createPdf(docDefinition).download('optionalName.pdf');
   }
 
   confirm() {
