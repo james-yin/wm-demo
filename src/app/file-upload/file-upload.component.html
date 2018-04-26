@@ -1,0 +1,12 @@
+<div>
+  <p-fileUpload name="myfile[]" customUpload="true" multiple="multiple" (uploadHandler)="myUploader($event)"></p-fileUpload>
+</div>
+<p></p>
+<div *ngIf="imageData.length > 0" class="container-fluid">
+  <div class="row">uploaded image</div>
+  <div class="row">
+    <div class="col" *ngFor="let data of imageData">
+      <img src="{{ data }}" />
+    </div>
+  </div>
+</div>

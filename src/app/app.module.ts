@@ -23,6 +23,8 @@ import { PoDetailComponent } from './po-detail/po-detail.component';
 import { PriceQuoteComponent } from './price-quote/price-quote.component';
 import { PoEditComponent } from './po-edit/po-edit.component';
 import { PoDetailItemComponent } from './po-detail-item/po-detail-item.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import { ApproveComponent } from './approve/approve.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { PoDetailItemComponent } from './po-detail-item/po-detail-item.component
     PoDetailComponent,
     PriceQuoteComponent,
     PoEditComponent,
-    PoDetailItemComponent
+    PoDetailItemComponent,
+    FileUploadComponent,
+    ApproveComponent
   ],
   imports: [
     BrowserModule,
