@@ -16,6 +16,7 @@ export class FileUploadComponent implements OnInit {
     for (let i = 0; i < allFiles.length; i++) {
       const reader = new FileReader();
       reader.onload = e => {
+        console.log((e.target as FileReader).result);
         this.imageData.push((e.target as FileReader).result);
       };
       reader.readAsDataURL(allFiles[i]);
