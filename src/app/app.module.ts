@@ -13,7 +13,8 @@ import { GrowlModule } from 'primeng/growl';
 import { CalendarModule } from 'primeng/calendar';
 import { TabViewModule } from 'primeng/tabview';
 import { FileUploadModule } from 'primeng/fileupload';
-import {GalleriaModule} from 'primeng/galleria';
+import { GalleriaModule } from 'primeng/galleria';
+import { NgxGalleryModule } from 'ngx-gallery';
 
 import { AppComponent } from './app.component';
 import { DataService } from './data.service';
@@ -52,7 +53,8 @@ import { ApproveComponent } from './approve/approve.component';
     CalendarModule,
     TabViewModule,
     FileUploadModule,
-    GalleriaModule
+    GalleriaModule,
+    NgxGalleryModule
   ],
   providers: [DataService, ConfirmationService, HelperService],
   bootstrap: [AppComponent]
