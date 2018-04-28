@@ -17,7 +17,7 @@ import { GalleriaModule } from 'primeng/galleria';
 import { NgxGalleryModule } from 'ngx-gallery';
 
 import { AppComponent } from './app.component';
-import { DataService } from './data.service';
+import { DataService } from './shared/data.service';
 import { HelperService } from './shared/helper.service';
 import { PoSummaryComponent } from './po-summary/po-summary.component';
 import { PoSuggestionComponent } from './po-suggestion/po-suggestion.component';

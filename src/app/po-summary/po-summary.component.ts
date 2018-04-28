@@ -5,7 +5,7 @@ import * as _ from 'lodash';
 import * as pdfMake from 'pdfmake/build/pdfmake.js';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts.js';
 
-import { DataService } from '../data.service';
+import { DataService } from '../shared/data.service';
 import { HelperService } from '../shared/helper.service';
 
 @Component({
