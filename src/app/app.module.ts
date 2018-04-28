@@ -13,12 +13,12 @@ import { GrowlModule } from 'primeng/growl';
 import { CalendarModule } from 'primeng/calendar';
 import { TabViewModule } from 'primeng/tabview';
 import { FileUploadModule } from 'primeng/fileupload';
-import { GalleriaModule } from 'primeng/galleria';
 import { NgxGalleryModule } from 'ngx-gallery';
 
 import { AppComponent } from './app.component';
 import { DataService } from './shared/data.service';
 import { HelperService } from './shared/helper.service';
+import { MediaService } from './shared/media.service';
 import { PoSummaryComponent } from './po-summary/po-summary.component';
 import { PoSuggestionComponent } from './po-suggestion/po-suggestion.component';
 import { PoDetailComponent } from './po-detail/po-detail.component';
@@ -53,10 +53,9 @@ import { ApproveComponent } from './approve/approve.component';
     CalendarModule,
     TabViewModule,
     FileUploadModule,
-    GalleriaModule,
     NgxGalleryModule
   ],
-  providers: [DataService, ConfirmationService, HelperService],
+  providers: [DataService, ConfirmationService, HelperService, MediaService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

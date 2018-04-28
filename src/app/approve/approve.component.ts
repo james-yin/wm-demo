@@ -5,16 +5,19 @@ import {
   NgxGalleryAnimation
 } from 'ngx-gallery';
 
+import { MediaType } from '../shared/media-type.enum';
+import { Media } from '../shared/media';
+import { MediaService } from '../shared/media.service';
+
 @Component({
   selector: 'app-approve',
   templateUrl: './approve.component.html'
 })
 export class ApproveComponent implements OnInit {
-  images: any[];
   galleryOptions: NgxGalleryOptions[];
-  galleryImages: NgxGalleryImage[];
+  galleryImages: NgxGalleryImage[] = [];
 
-  constructor() {}
+  constructor(private mediaService: MediaService) {}
 
   ngOnInit() {
     this.galleryOptions = [
@@ -43,29 +46,20 @@ export class ApproveComponent implements OnInit {
         preview: false
       }
     ];
+  }
 
-    this.galleryImages = [
-      {
-        small: 'assets/images/deng-hs.jpg',
-        medium: 'assets/images/deng-hs.jpg',
-        big: 'assets/images/deng-hs.jpg'
-      },
-      {
-        // tslint:disable-next-line:max-line-length
-        small: 'assets/images/Xi_Jinping_March_2017a.png',
-        medium: 'assets/images/Xi_Jinping_March_2017a.png',
-        big: 'assets/images/Xi_Jinping_March_2017a.png'
+  updateMedia() {
+    console.log('updateMedia()');
+    this.galleryImages = [];
+    const mediaList = this.mediaService.getAll();
+    mediaList.forEach(m => {
+      if (m.type === MediaType.Image) {
+        this.galleryImages.push(<NgxGalleryImage>{
+          small: m.data,
+          medium: m.data,
+          big: m.data
+        });
       }
-    ];
-
-    // this.images = [];
-    // this.images.push({
-    //   source: 'assets/images/deng-hs.jpg',
-    //   title: ''
-    // });
-    // this.images.push({
-    //   source: 'assets/images/Xi_Jinping_March_2017a.png',
-    //   title: ''
-    // });
+    });
   }
 }

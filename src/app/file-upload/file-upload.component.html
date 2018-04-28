@@ -1,12 +1,8 @@
 <div>
-  <p-fileUpload name="myfile[]" customUpload="true" multiple="multiple" (uploadHandler)="myUploader($event)"></p-fileUpload>
+  <p-fileUpload #uploader name="myfile[]" customUpload="true" multiple="multiple" maxFileSize="1000000" (uploadHandler)="myUploader($event)"></p-fileUpload>
 </div>
 <p></p>
-<div *ngIf="imageData.length > 0" class="container-fluid">
-  <div class="row">uploaded image</div>
-  <div class="row">
-    <div class="col" *ngFor="let data of imageData">
-      <img src="{{ data }}" />
-    </div>
-  </div>
+<div *ngIf="isUploadComplete">
+  <div class="alert alert-success">图片已上传完毕</div>
+  <button type="button" class="btn btn-warning" (click)='uploader.clear(); onClearData()'>Clear All Uploaded Data</button>
 </div>

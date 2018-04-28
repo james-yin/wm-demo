@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MediaType } from '../shared/media-type.enum';
+import { Media } from '../shared/media';
+import { MediaService } from '../shared/media.service';
+
 @Component({
   selector: 'app-file-upload',
   templateUrl: './file-upload.component.html'
 })
 export class FileUploadComponent implements OnInit {
-  imageData: any[] = [];
+  isUploadComplete = false;
 
-  constructor() {}
+  constructor(private mediaService: MediaService) {}
 
   ngOnInit() {}
 
@@ -16,29 +20,19 @@ export class FileUploadComponent implements OnInit {
     for (let i = 0; i < allFiles.length; i++) {
       const reader = new FileReader();
       reader.onload = e => {
-        console.log((e.target as FileReader).result);
-        this.imageData.push((e.target as FileReader).result);
+        this.mediaService.create(<Media>{
+          type: MediaType.Image,
+          data: (e.target as FileReader).result,
+          timeStamp: new Date()
+        });
       };
       reader.readAsDataURL(allFiles[i]);
     }
+    this.isUploadComplete = true;
   }
 
-  // myUploader(event) {
-  //   // console.log('event.files', event.files);
-  //   // this.files = event.files;
-  //   // const file = event.files[0];
-  //   const reader = new FileReader();
-  //   reader.onload = this._handleReaderLoaded.bind(this);
-  //   // reader.readAsDataURL(file);
-  //   for (const f of event.files) {
-  //     console.log('f', f);
-  //     reader.readAsDataURL(f);
-  //   }
-  // }
-
-  // _handleReaderLoaded(e) {
-  //   const reader = e.target;
-  //   this.imageSrc = reader.result;
-  //   this.imageData.push(reader.result);
-  // }
+  onClearData() {
+    this.mediaService.deleteAll();
+    this.isUploadComplete = false;
+  }
 }
