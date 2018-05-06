@@ -1,6 +1,6 @@
 <div style="margin-left: 1rem">
   <p-table [columns]="cols" [value]="priceQuotes" dataKey="id" [resizableColumns]="true">
-    <ng-template pTemplate="caption">
+    <ng-template pTemplate="caption" rowExpandMode="single">
       <span class="text-white">报价单</span>
     </ng-template>
     <ng-template pTemplate="header" let-columns>

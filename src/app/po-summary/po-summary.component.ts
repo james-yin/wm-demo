@@ -18,6 +18,7 @@ export class PoSummaryComponent implements OnInit {
   selectedSummary: any;
   displayDialog = false;
   msgs: Message[] = [];
+  expandedRowId: string;
 
   constructor(
     private dataService: DataService,
@@ -121,6 +122,14 @@ export class PoSummaryComponent implements OnInit {
 
   onRowSelect(event) {
     this.displayDialog = true;
+  }
+
+  onRowExpand(event) {
+    this.expandedRowId = event.data.id;
+  }
+
+  onRowCollapse(event) {
+    this.expandedRowId = undefined;
   }
 
   save() {

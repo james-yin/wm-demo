@@ -1,8 +1,18 @@
 <div class="container-fluid">
   <!-- <button (click)='genPdf()'>PDF</button> -->
   <div class="row">
-    <p-table [columns]="cols" [value]="poSummary" dataKey="id" [resizableColumns]="true" selectionMode="single" [(selection)]="selectedSummary"
-      (onRowSelect)="onRowSelect($event)">
+    <p-table
+      [columns]="cols"
+      [value]="poSummary"
+      dataKey="id"
+      [resizableColumns]="true"
+      selectionMode="single"
+      [(selection)]="selectedSummary"
+      (onRowSelect)="onRowSelect($event)"
+      rowExpandMode="single"
+      (onRowExpand)="onRowExpand($event)"
+      (onRowCollapse)="onRowCollapse($event)"
+      >
       <ng-template pTemplate="caption">
         <span class="text-white">请购汇总</span>
       </ng-template>
@@ -14,8 +24,17 @@
           </th>
         </tr>
       </ng-template>
-      <ng-template pTemplate="body" let-rowData let-expanded="expanded" let-columns="columns" [pSelectableRow]="rowData">
-        <tr [pSelectableRow]="rowData">
+      <ng-template
+        pTemplate="body"
+        let-rowData
+        let-expanded="expanded"
+        let-columns="columns"
+        [pSelectableRow]="rowData"
+        >
+        <tr
+          [pSelectableRow]="rowData"
+          [ngClass]="expandedRowId && rowData.id !== expandedRowId ? 'faded-row' : null"
+          >
           <td style="padding: 0">
             <a href="#" [pRowToggler]="rowData">
               <i [ngClass]="expanded ?
@@ -44,7 +63,14 @@
   </div>
 </div>
 
-<p-dialog header="请购编辑" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" [width]="640">
+<p-dialog
+  header="请购编辑"
+  [(visible)]="displayDialog"
+  [responsive]="true"
+  showEffect="fade"
+  [modal]="true"
+  [width]="640"
+  >
   <app-po-edit [po]="selectedSummary"></app-po-edit>
   <p-footer>
     <div class="ui-dialog-buttonpane ui-helper-clearfix">

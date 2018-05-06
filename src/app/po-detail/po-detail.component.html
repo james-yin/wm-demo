@@ -1,6 +1,6 @@
 <div style="margin-left: 1rem">
   <p-table [columns]="cols" [value]="poDetails" dataKey="id" [resizableColumns]="true" selectionMode="single" [(selection)]="selectedDetail"
-    (onRowSelect)="onRowSelect($event)">
+    (onRowSelect)="onRowSelect($event)" rowExpandMode="single">
     <ng-template pTemplate="caption">
       <span class="text-white">送货明细 - 合并</span>
     </ng-template>
