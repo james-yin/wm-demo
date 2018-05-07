@@ -51,11 +51,11 @@
         <tr>
           <td [attr.colspan]="columns.length + 1">
             <app-po-suggestion [poSummaryItem]="rowData"></app-po-suggestion>
-            <p></p>
+            <p style="margin-top: 2rem;"></p>
             <app-po-detail [poDetails]="rowData.deliveryDetails"></app-po-detail>
             <p></p>
             <app-price-quote [priceQuotes]="rowData.priceQuotes"></app-price-quote>
-            <p></p>
+            <p style="margin-top: 8rem;"></p>
           </td>
         </tr>
       </ng-template>
