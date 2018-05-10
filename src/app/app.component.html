@@ -1,8 +1,8 @@
 <p-tabView (onChange)="onTabChange($event)">
-  <p-tabPanel header="请购" [selected]="true">
+  <p-tabPanel header="请购">
     <app-po-summary></app-po-summary>
   </p-tabPanel>
-  <p-tabPanel header="上传">
+  <p-tabPanel header="上传" [selected]="true">
     <app-file-upload></app-file-upload>
   </p-tabPanel>
   <p-tabPanel header="批准">

@@ -1,1 +1,44 @@
-<ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm card mx-3">
+      <div class="card-body">
+        <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+      </div>
+    </div>
+    <div class="col-sm card mx-3">
+      <div class="card-body p-1">
+        <form>
+          <div class="form-group row">
+            <label for="current-status" class="col-sm-2 col-form-label">当前状态</label>
+            <div class="col-sm-10">
+              <input class="form-control" id="current-status">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="approved-already-by" class="col-sm-2 col-form-label">已审批人</label>
+            <div class="col-sm-10">
+              <input class="form-control" id="approved-already-by">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="approve-waiting-by" class="col-sm-2 col-form-label">待审批人</label>
+            <div class="col-sm-10">
+              <input class="form-control" id="approve-waiting-by">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="approved-all" class="col-sm-2 col-form-label">所有审批人</label>
+            <div class="col-sm-10">
+              <input class="form-control" id="approved-all">
+            </div>
+          </div>
+        </form>
+        <p-tabView>
+            <p-tabPanel header="报单">
+              <img src="/assets/images/declaration-form.png" class="img-fluid">
+            </p-tabPanel>
+          </p-tabView>
+      </div>
+    </div>
+  </div>
+</div>
