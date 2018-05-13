@@ -8,6 +8,7 @@ import {
 import { MediaType } from '../shared/media-type.enum';
 import { Media } from '../shared/media';
 import { MediaService } from '../shared/media.service';
+import { DataService } from '../shared/data.service';
 
 @Component({
   selector: 'app-approve',
@@ -17,7 +18,10 @@ export class ApproveComponent implements OnInit {
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[] = [];
 
-  constructor(private mediaService: MediaService) {}
+  constructor(
+    private mediaService: MediaService,
+    private dataService: DataService
+  ) {}
 
   ngOnInit() {
     this.galleryOptions = [
@@ -48,6 +52,19 @@ export class ApproveComponent implements OnInit {
     ];
 
     this.updateMedia();
+  }
+
+  onRemoteGet() {
+    this.dataService.getRemoteImages().subscribe(imageStrings => {
+      imageStrings.forEach(str => {
+        this.mediaService.prepend(<Media>{
+          type: MediaType.Image,
+          data: str,
+          timeStamp: new Date()
+        });
+      });
+      this.updateMedia();
+    });
   }
 
   updateMedia() {

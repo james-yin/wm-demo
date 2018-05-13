@@ -23,7 +23,7 @@ export class FileUploadComponent implements OnInit {
     for (let i = 0; i < allFiles.length; i++) {
       const reader = new FileReader();
       reader.onload = e => {
-        this.mediaService.create(<Media>{
+        this.mediaService.append(<Media>{
           type: MediaType.Image,
           data: (e.target as FileReader).result,
           timeStamp: new Date()

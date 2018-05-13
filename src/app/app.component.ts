@@ -40,13 +40,12 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.b64Images.forEach(i => {
-      this.mediaService.create(<Media>{
+      this.mediaService.append(<Media>{
         type: MediaType.Image,
         data: i,
         timeStamp: new Date()
       });
     });
-    console.log(this.mediaService.getAll());
   }
 
   onTabChange(e) {

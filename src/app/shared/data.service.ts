@@ -14,4 +14,8 @@ export class DataService {
   public getPoSummaryData(): Observable<any> {
     return this.http.get('./assets/po-summary.json');
   }
+
+  public getRemoteImages(): Observable<any> {
+    return this.http.get('http://www.mocky.io/v2/5af878ec320000140986af03');
+  }
 }

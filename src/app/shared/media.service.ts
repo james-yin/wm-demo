@@ -9,8 +9,12 @@ export class MediaService {
 
   constructor() {}
 
-  create(media: Media) {
+  append(media: Media) {
     this.allMedia.push(media);
+  }
+
+  prepend(media: Media) {
+    this.allMedia.unshift(media);
   }
 
   getAll() {
