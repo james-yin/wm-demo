@@ -16,6 +16,6 @@ export class DataService {
   }
 
   public getRemoteImages(): Observable<any> {
-    return this.http.get('http://www.mocky.io/v2/5af878ec320000140986af03');
+    return this.http.get('https://www.mocky.io/v2/5af878ec320000140986af03');
   }
 }
