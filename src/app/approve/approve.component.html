@@ -1,11 +1,13 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm card mx-3">
+    <div class="col-lg card mx-3">
       <div class="card-body">
-        <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+        <div class="container-fluid">
+          <ngx-gallery class="col-lg" [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+        </div>
       </div>
     </div>
-    <div class="col-sm card mx-3">
+    <div class="col-lg card mx-3">
       <div class="card-body p-1">
         <form>
           <div class="form-group row">

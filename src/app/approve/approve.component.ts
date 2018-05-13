@@ -46,10 +46,11 @@ export class ApproveComponent implements OnInit {
         preview: false
       }
     ];
+
+    this.updateMedia();
   }
 
   updateMedia() {
-    console.log('updateMedia()');
     this.galleryImages = [];
     const mediaList = this.mediaService.getAll();
     mediaList.forEach(m => {

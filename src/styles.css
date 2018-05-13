@@ -43,3 +43,7 @@ app-price-quote .ui-table-caption.ui-widget-header {
 .faded-row {
   opacity: 0.2;
 }
+
+.ngx-gallery-arrow {
+  color: maroon !important;
+}
