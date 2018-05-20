@@ -16,6 +16,8 @@ export class DataService {
   }
 
   public getRemoteImages(): Observable<any> {
-    return this.http.get('https://www.mocky.io/v2/5af878ec320000140986af03');
+    // const url = 'https://www.mocky.io/v2/5af878ec320000140986af03';
+    const url = 'https://outlookunited.com/site/cloud?class=Tickets';
+    return this.http.get(url);
   }
 }

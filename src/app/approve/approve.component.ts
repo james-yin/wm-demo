@@ -55,12 +55,23 @@ export class ApproveComponent implements OnInit {
   }
 
   onRemoteGet() {
-    this.dataService.getRemoteImages().subscribe(imageStrings => {
-      imageStrings.forEach(str => {
+    // this.dataService.getRemoteImages().subscribe(imageStrings => {
+    //   imageStrings.forEach(str => {
+    //     this.mediaService.prepend(<Media>{
+    //       type: MediaType.Image,
+    //       data: str,
+    //       timeStamp: new Date()
+    //     });
+    //   });
+    //   this.updateMedia();
+    // });
+
+    this.dataService.getRemoteImages().subscribe(resp => {
+      resp.results.forEach(result => {
         this.mediaService.prepend(<Media>{
           type: MediaType.Image,
-          data: str,
-          timeStamp: new Date()
+          data: result.img,
+          timeStamp: new Date(result.createdAt)
         });
       });
       this.updateMedia();
