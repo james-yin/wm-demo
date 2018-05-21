@@ -68,9 +68,10 @@ export class ApproveComponent implements OnInit {
 
     this.dataService.getRemoteImages().subscribe(resp => {
       resp.results.forEach(result => {
+        console.log(result.img);
         this.mediaService.prepend(<Media>{
           type: MediaType.Image,
-          data: result.img,
+          data: result.img.replace('http:/', 'https:/'),
           timeStamp: new Date(result.createdAt)
         });
       });
