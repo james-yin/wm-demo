@@ -8,12 +8,20 @@ import { DataService } from '../shared/data.service';
 export class ToDoComponent implements OnInit {
   toDoList: any[];
   ticketList: any[];
+  mapOptions: any;
+  // map: google.maps.Map;
+  latitude: string;
+  longitude: string;
 
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
     this.getToDoList();
     this.getTicketList();
+    // this.mapOptions = {
+    // center: { lat: 36.890257, lng: 30.707417 },
+    // zoom: 12
+    // };
   }
 
   getToDoList() {
@@ -21,6 +29,14 @@ export class ToDoComponent implements OnInit {
       this.toDoList = resp.results.splice(0, 3);
     });
   }
+
+  // setMap(event) {
+  //   this.map = event.map;
+  //   this.mapOptions = {
+  //     center: { lat: 36.890257, lng: 30.707417 },
+  //     zoom: 12
+  //   };
+  // }
 
   getTicketList() {
     this.dataService.getTicketData().subscribe(resp => {

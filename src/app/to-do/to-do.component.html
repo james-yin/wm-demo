@@ -16,3 +16,13 @@
     </div>
   </div>
 </div>
+<p></p>
+
+<!-- <p-gmap
+  [options]="mapOptions"
+  (onMapReady)="setMap($event)"
+  [style]="{'width':'100%','height':'320px'}" ></p-gmap> -->
+<a *ngIf="ticketList" target="_blank"
+  href="http://maps.google.com/maps?q={{ ticketList[0].latitude }},{{ ticketList[0].longitude }}">
+  http://maps.google.com/maps?q={{ ticketList[0].latitude }},{{ ticketList[0].longitude }}
+</a>
