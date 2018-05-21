@@ -20,4 +20,14 @@ export class DataService {
     const url = 'https://outlookunited.com/site/cloud?class=Tickets';
     return this.http.get(url);
   }
+
+  public getToDoData(): Observable<any> {
+    const url = 'https://outlookunited.com/site/cloud?class=Todos';
+    return this.http.get(url);
+  }
+
+  public getTicketData(): Observable<any> {
+    const url = 'https://outlookunited.com/site/cloud?class=Tickets';
+    return this.http.get(url);
+  }
 }

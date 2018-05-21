@@ -27,6 +27,7 @@ import { PoEditComponent } from './po-edit/po-edit.component';
 import { PoDetailItemComponent } from './po-detail-item/po-detail-item.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ApproveComponent } from './approve/approve.component';
+import { ToDoComponent } from './to-do/to-do.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ApproveComponent } from './approve/approve.component';
     PoEditComponent,
     PoDetailItemComponent,
     FileUploadComponent,
-    ApproveComponent
+    ApproveComponent,
+    ToDoComponent
   ],
   imports: [
     BrowserModule,

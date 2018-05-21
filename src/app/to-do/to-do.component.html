@@ -1,0 +1,18 @@
+<div class="list-group">
+  <a href="#"
+    class="list-group-item list-group-item-action"
+    [ngClass]="todo.completed ? 'list-group-item-secondary' : 'list-group-item-primary'"
+    *ngFor='let todo of toDoList'>
+    <i [ngClass]="todo.completed ? 'fa fa-check-square-o' : 'fa fa-square-o'"></i>
+    {{ todo.name }}
+  </a>
+</div>
+<p></p>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col" *ngFor="let t of ticketList">
+      <img src="{{ t.img }}" width="100%">
+    </div>
+  </div>
+</div>
