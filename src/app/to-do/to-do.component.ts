@@ -57,7 +57,7 @@ export class ToDoComponent implements OnInit {
           lat: ticket.latitude,
           lng: ticket.longitude
         },
-        title: ticket.name || 'I was here.'}),
+        title: ticket.name || '齐天大圣到此一游'}),
     ];
   }
 }
