@@ -1,28 +1,92 @@
-<div class="list-group">
-  <a href="#"
-    class="list-group-item list-group-item-action"
-    [ngClass]="todo.completed ? 'list-group-item-secondary' : 'list-group-item-primary'"
-    *ngFor='let todo of toDoList'>
-    <i [ngClass]="todo.completed ? 'fa fa-check-square-o' : 'fa fa-square-o'"></i>
-    {{ todo.name }}
-  </a>
-</div>
-<p></p>
-
 <div class="container-fluid">
-  <div class="row">
-    <div class="col" *ngFor="let t of ticketList">
-      <img src="{{ t.img }}" width="100%">
+  <nav class="row navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <button type="button" class="btn btn-primary">
+          <i class="fa fa-plus"></i> Add</button>
+        <button type="button" class="btn btn-primary ml-2">
+          <i class="fa fa-times"></i> Cancel</button>
+      </div>
     </div>
+  </nav>
+  <div class="row">
+    <p-tabView class="col">
+      <p-tabPanel header="主题1">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md">
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">参与人员</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">事项</label>
+                <div class="col-sm-10">
+                  <div class="list-group">
+                    <a href="#"
+                      class="list-group-item list-group-item-action"
+                      [ngClass]="todo.completed ? 'list-group-item-secondary' : 'list-group-item-primary'"
+                      *ngFor='let todo of toDoList'>
+                      <i [ngClass]="todo.completed ? 'fa fa-check-square-o' : 'fa fa-square-o'"></i>
+                      {{ todo.name }}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="form-group row">
+                  <label class="col-sm-2 col-form-label">内容</label>
+                  <div class="col-sm-10">
+                    <textarea class="form-control" rows="8"></textarea>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-md">
+              <div class="row">
+                <div class="col-sm-2">照片</div>
+                <div class="col-sm-10">
+                  <div class="row">
+                    <div class="col-sm" *ngFor="let t of ticketList">
+                      <img src="{{ t.img }}" width="100%">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="row">
+                <div class="col-sm-2">地点</div>
+                <div class="col-sm-10">
+                  <a *ngIf="ticketList" target="_blank"
+                    href="http://maps.google.com/maps?q={{ ticketList[0].latitude }},{{ ticketList[0].longitude }}">
+                    http://maps.google.com/maps?q={{ ticketList[0].latitude }},{{ ticketList[0].longitude }}
+                  </a>
+                  <p-gmap *ngIf="ticketList"
+                    [options]="mapOptions"
+                    [overlays]="overlays"
+                    [style]="{'width':'100%','height':'320px'}"></p-gmap>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p></p>
+          <div class="row">
+            <div class="col">
+              <button type="button" class="btn btn-primary btn-lg float-right">完成</button>
+            </div>
+          </div>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="主题2">...</p-tabPanel>
+      <p-tabPanel header="主题3">...</p-tabPanel>
+    </p-tabView>
   </div>
 </div>
-<p></p>
-
-<a *ngIf="ticketList" target="_blank"
-  href="http://maps.google.com/maps?q={{ ticketList[0].latitude }},{{ ticketList[0].longitude }}">
-  http://maps.google.com/maps?q={{ ticketList[0].latitude }},{{ ticketList[0].longitude }}
-</a>
-<p-gmap *ngIf="ticketList"
-  [options]="mapOptions"
-  [overlays]="overlays"
-  [style]="{'width':'100%','height':'320px'}"></p-gmap>

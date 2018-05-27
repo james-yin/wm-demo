@@ -11,7 +11,6 @@ export class ToDoComponent implements OnInit {
   toDoList: any[];
   ticketList: any[];
   mapOptions: any;
-  map: google.maps.Map;
   latitude: string;
   longitude: string;
   overlays: any;
@@ -42,7 +41,6 @@ export class ToDoComponent implements OnInit {
 
   setMapOptions() {
     const ticket = this.ticketList[0];
-    // map options
     this.mapOptions = {
       center: {
         lat: ticket.latitude,
@@ -50,14 +48,14 @@ export class ToDoComponent implements OnInit {
       },
       zoom: 20
     };
-    // map overlays
     this.overlays = [
       new google.maps.Marker({
         position: {
           lat: ticket.latitude,
           lng: ticket.longitude
         },
-        title: ticket.name || '齐天大圣到此一游'}),
+        title: ticket.name || '齐天大圣到此一游'
+      })
     ];
   }
 }
