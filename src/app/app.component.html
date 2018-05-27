@@ -8,10 +8,10 @@
   <p-tabPanel header="批准">
     <app-approve></app-approve>
   </p-tabPanel>
-  <p-tabPanel header="To-Do" [selected]="true">
+  <p-tabPanel header="To-Do">
     <app-to-do></app-to-do>
   </p-tabPanel>
-  <p-tabPanel header="扫描">
-      ...
-    </p-tabPanel>
-  </p-tabView>
+  <p-tabPanel header="扫描" [selected]="true">
+    <app-scanner-input-container></app-scanner-input-container>
+  </p-tabPanel>
+</p-tabView>

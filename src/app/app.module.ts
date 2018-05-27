@@ -29,6 +29,8 @@ import { PoDetailItemComponent } from './po-detail-item/po-detail-item.component
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ApproveComponent } from './approve/approve.component';
 import { ToDoComponent } from './to-do/to-do.component';
+import { ScannerInputComponent } from './scanner-input/scanner-input.component';
+import { ScannerInputContainerComponent } from './scanner-input-container/scanner-input-container.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { ToDoComponent } from './to-do/to-do.component';
     PoDetailItemComponent,
     FileUploadComponent,
     ApproveComponent,
-    ToDoComponent
+    ToDoComponent,
+    ScannerInputComponent,
+    ScannerInputContainerComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,17 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">{{ labelText }}</label>
+    <div class="col-sm-8">
+      <input #input type="text" class="form-control" name="input" id="input" maxlength="100" ngModel autocomplete="off">
+      <ul>
+        <li *ngFor="let input of inputList">{{ input }}</li>
+      </ul>
+    </div>
+    <div class="col-sm-2">
+      <button type="submit" class="btn btn-primary">
+        <i class="fa fa-floppy-o"></i>
+        <span class="ml-2">Save</span>
+      </button>
+    </div>
+  </div>
+</form>
