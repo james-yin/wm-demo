@@ -1,19 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../shared/data.service';
 
-declare var google: any;
-
 @Component({
   selector: 'app-to-do',
   templateUrl: './to-do.component.html'
 })
 export class ToDoComponent implements OnInit {
+  baiduMapApiKey = 'LVde4U5Whh07YpyEQxUvzcZ9C49jBZy6';
+
   toDoList: any[];
   ticketList: any[];
-  mapOptions: any;
-  latitude: string;
-  longitude: string;
-  overlays: any;
 
   constructor(private dataService: DataService) {}
 
@@ -35,27 +31,19 @@ export class ToDoComponent implements OnInit {
       this.ticketList.forEach(t => {
         t.img = t.img.replace('http:/', 'https:/');
       });
-      this.setMapOptions();
     });
   }
 
-  setMapOptions() {
-    const ticket = this.ticketList[0];
-    this.mapOptions = {
-      center: {
-        lat: ticket.latitude,
-        lng: ticket.longitude
-      },
-      zoom: 20
-    };
-    this.overlays = [
-      new google.maps.Marker({
-        position: {
-          lat: ticket.latitude,
-          lng: ticket.longitude
-        },
-        title: ticket.name || '齐天大圣到此一游'
-      })
-    ];
+  getMapImageUrl() {
+    return (
+      `https://api.map.baidu.com/staticimage/v2?` +
+      `ak=${this.baiduMapApiKey}` +
+      `&mcode=666666&dpiType=ph&zoom=18&scale=2` +
+      `&center=${this.ticketList[0].longitude},${this.ticketList[0].latitude}` +
+      `&markers=${this.ticketList[0].longitude},${
+        this.ticketList[0].latitude
+      }` +
+      `&markerStyles=l,A,0xFF0000`
+    );
   }
 }

@@ -13,7 +13,6 @@ import { GrowlModule } from 'primeng/growl';
 import { CalendarModule } from 'primeng/calendar';
 import { TabViewModule } from 'primeng/tabview';
 import { FileUploadModule } from 'primeng/fileupload';
-import { GMapModule } from 'primeng/gmap';
 import { NgxGalleryModule } from 'ngx-gallery';
 
 import { AppComponent } from './app.component';
@@ -60,7 +59,6 @@ import { ScannerInputContainerComponent } from './scanner-input-container/scanne
     CalendarModule,
     TabViewModule,
     FileUploadModule,
-    GMapModule,
     NgxGalleryModule
   ],
   providers: [DataService, ConfirmationService, HelperService, MediaService],
