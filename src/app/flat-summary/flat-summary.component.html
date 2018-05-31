@@ -6,6 +6,7 @@
   selectionMode="single"
   [(selection)]="selectedSummary"
   (onRowSelect)="onRowSelect($event)"
+  (onRowUnselect)="onRowUnselect($event)"
   >
   <ng-template pTemplate="caption">
     <span class="text-white">请购汇总</span>

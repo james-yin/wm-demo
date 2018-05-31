@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { DataService } from '../shared/data.service';
 import { HelperService } from '../shared/helper.service';
@@ -11,6 +11,8 @@ export class FlatSummaryComponent implements OnInit {
   cols: any[];
   poSummary: any[];
   selectedSummary: any;
+
+  @Output() rowSelect: EventEmitter<string> = new EventEmitter<string>();
 
   constructor(private dataService: DataService, public helper: HelperService) {}
 
@@ -83,7 +85,10 @@ export class FlatSummaryComponent implements OnInit {
   }
 
   onRowSelect(event) {
-    const id = event.data.id;
-    console.log('id', id);
+    this.rowSelect.emit(event.data.id);
+  }
+
+  onRowUnselect(event) {
+    this.rowSelect.emit(undefined);
   }
 }
