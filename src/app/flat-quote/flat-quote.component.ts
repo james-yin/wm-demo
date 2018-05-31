@@ -5,13 +5,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './flat-quote.component.html'
 })
 export class FlatQuoteComponent implements OnInit {
-  summaryId: string;
+  quotesData: any;
 
   constructor() {}
 
   ngOnInit() {}
 
-  populateData(summaryId: string) {
-    this.summaryId = summaryId;
+  populateData(quotesData) {
+    this.quotesData = quotesData;
   }
 }

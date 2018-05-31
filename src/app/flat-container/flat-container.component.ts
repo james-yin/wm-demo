@@ -14,8 +14,10 @@ export class FlatContainerComponent implements OnInit {
 
   ngOnInit() {}
 
-  onSummaryRowSelect(summaryId: string) {
-    this.flatDetail.populateData(summaryId);
-    this.flatQuote.populateData(summaryId);
+  onSummaryRowSelect(summaryData) {
+    this.flatDetail.populateData(
+      summaryData ? summaryData.deliveryDetails : null
+    );
+    this.flatQuote.populateData(summaryData ? summaryData.priceQuotes : null);
   }
 }

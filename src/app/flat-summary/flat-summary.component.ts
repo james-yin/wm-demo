@@ -12,7 +12,7 @@ export class FlatSummaryComponent implements OnInit {
   poSummary: any[];
   selectedSummary: any;
 
-  @Output() rowSelect: EventEmitter<string> = new EventEmitter<string>();
+  @Output() rowSelect: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private dataService: DataService, public helper: HelperService) {}
 
@@ -85,10 +85,10 @@ export class FlatSummaryComponent implements OnInit {
   }
 
   onRowSelect(event) {
-    this.rowSelect.emit(event.data.id);
+    this.rowSelect.emit(event.data);
   }
 
   onRowUnselect(event) {
-    this.rowSelect.emit(undefined);
+    this.rowSelect.emit(null);
   }
 }

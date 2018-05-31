@@ -5,13 +5,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './flat-detail.component.html'
 })
 export class FlatDetailComponent implements OnInit {
-  summaryId: string;
+  detailData: any;
 
   constructor() {}
 
   ngOnInit() {}
 
-  populateData(summaryId: string) {
-    this.summaryId = summaryId;
+  populateData(detailData) {
+    this.detailData = detailData;
   }
 }
