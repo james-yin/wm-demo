@@ -30,6 +30,11 @@ import { ApproveComponent } from './approve/approve.component';
 import { ToDoComponent } from './to-do/to-do.component';
 import { ScannerInputComponent } from './scanner-input/scanner-input.component';
 import { ScannerInputContainerComponent } from './scanner-input-container/scanner-input-container.component';
+import { FlatContainerComponent } from './flat-container/flat-container.component';
+import { FlatSummaryComponent } from './flat-summary/flat-summary.component';
+import { FlatDetailComponent } from './flat-detail/flat-detail.component';
+import { FlatQuoteComponent } from './flat-quote/flat-quote.component';
+import { FlatImageComponent } from './flat-image/flat-image.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +49,12 @@ import { ScannerInputContainerComponent } from './scanner-input-container/scanne
     ApproveComponent,
     ToDoComponent,
     ScannerInputComponent,
-    ScannerInputContainerComponent
+    ScannerInputContainerComponent,
+    FlatContainerComponent,
+    FlatSummaryComponent,
+    FlatDetailComponent,
+    FlatQuoteComponent,
+    FlatImageComponent
   ],
   imports: [
     BrowserModule,

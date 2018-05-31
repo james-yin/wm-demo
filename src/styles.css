@@ -36,6 +36,10 @@ app-price-quote .ui-table-caption.ui-widget-header {
   background: darkgray !important;
 }
 
+app-flat-summary .ui-table-caption.ui-widget-header {
+  background: dimgray !important;
+}
+
 .ui-tabview-panel {
   padding: 0.25rem 0 0 0 !important;
 }
