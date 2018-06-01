@@ -34,7 +34,6 @@ import { FlatContainerComponent } from './flat-container/flat-container.componen
 import { FlatSummaryComponent } from './flat-summary/flat-summary.component';
 import { FlatDetailComponent } from './flat-detail/flat-detail.component';
 import { FlatQuoteComponent } from './flat-quote/flat-quote.component';
-import { FlatImageComponent } from './flat-image/flat-image.component';
 
 @NgModule({
   declarations: [
@@ -53,8 +52,7 @@ import { FlatImageComponent } from './flat-image/flat-image.component';
     FlatContainerComponent,
     FlatSummaryComponent,
     FlatDetailComponent,
-    FlatQuoteComponent,
-    FlatImageComponent
+    FlatQuoteComponent
   ],
   imports: [
     BrowserModule,

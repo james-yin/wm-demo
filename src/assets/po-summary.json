@@ -1,5 +1,4 @@
-[
-  {
+[{
     "id": "5adbbfa9b6a56535aca108de",
     "materialNumber": "广东",
     "imageFile": "广东",
@@ -24,8 +23,7 @@
     "isTestMaterial": false,
     "isOtherReason": true,
     "otherReasoNote": "anim aute velit cupidatat",
-    "deliveryDetails": [
-      {
+    "deliveryDetails": [{
         "id": 0,
         "supplier": "广东",
         "quoteNumber": 366,
@@ -40,8 +38,7 @@
         "paymentType": "四川",
         "excludingTaxAtFactory": 9387.06,
         "includingTaxAtFactory": 2831.73,
-        "detailItems": [
-          {
+        "detailItems": [{
             "id": 0,
             "supplier": "广东",
             "quoteNumber": 302,
@@ -122,8 +119,7 @@
         "paymentType": "广东",
         "excludingTaxAtFactory": 8774.58,
         "includingTaxAtFactory": 823.16,
-        "detailItems": [
-          {
+        "detailItems": [{
             "id": 0,
             "supplier": "广东",
             "quoteNumber": 651,
@@ -172,8 +168,7 @@
         "paymentType": "广东",
         "excludingTaxAtFactory": 6217.35,
         "includingTaxAtFactory": 7261.32,
-        "detailItems": [
-          {
+        "detailItems": [{
             "id": 0,
             "supplier": "四川",
             "quoteNumber": 928,
@@ -254,8 +249,7 @@
         "paymentType": "广东",
         "excludingTaxAtFactory": 8141.27,
         "includingTaxAtFactory": 3522.35,
-        "detailItems": [
-          {
+        "detailItems": [{
             "id": 0,
             "supplier": "上海",
             "quoteNumber": 243,
@@ -322,8 +316,7 @@
         ]
       }
     ],
-    "priceQuotes": [
-      {
+    "priceQuotes": [{
         "id": 0,
         "supplierAbbreviation": "广东",
         "quoteNumber": 726,
@@ -343,7 +336,8 @@
         "paymentChannel": "北京",
         "currency": "USD",
         "deliveryType": "四川",
-        "deliveryCost": 3154.15
+        "deliveryCost": 3154.15,
+        "imageFileName": "quote01.png"
       },
       {
         "id": 1,
@@ -365,7 +359,8 @@
         "paymentChannel": "广东",
         "currency": "USD",
         "deliveryType": "上海",
-        "deliveryCost": 7469.85
+        "deliveryCost": 7469.85,
+        "imageFileName": "quote02.png"
       },
       {
         "id": 2,
@@ -387,7 +382,8 @@
         "paymentChannel": "上海",
         "currency": "USD",
         "deliveryType": "北京",
-        "deliveryCost": 3925.74
+        "deliveryCost": 3925.74,
+        "imageFileName": "quote03.png"
       },
       {
         "id": 3,
@@ -409,7 +405,8 @@
         "paymentChannel": "上海",
         "currency": "USD",
         "deliveryType": "广东",
-        "deliveryCost": 4826.49
+        "deliveryCost": 4826.49,
+        "imageFileName": "quote04.png"
       }
     ]
   },
@@ -438,8 +435,7 @@
     "isTestMaterial": false,
     "isOtherReason": false,
     "otherReasoNote": "ex amet aliqua nisi",
-    "deliveryDetails": [
-      {
+    "deliveryDetails": [{
         "id": 0,
         "supplier": "四川",
         "quoteNumber": 340,
@@ -454,8 +450,7 @@
         "paymentType": "四川",
         "excludingTaxAtFactory": 2923.57,
         "includingTaxAtFactory": 4483.14,
-        "detailItems": [
-          {
+        "detailItems": [{
             "id": 0,
             "supplier": "四川",
             "quoteNumber": 340,
@@ -536,8 +531,7 @@
         "paymentType": "四川",
         "excludingTaxAtFactory": 2432.09,
         "includingTaxAtFactory": 3256.92,
-        "detailItems": [
-          {
+        "detailItems": [{
             "id": 0,
             "supplier": "四川",
             "quoteNumber": 479,
@@ -572,8 +566,7 @@
         ]
       }
     ],
-    "priceQuotes": [
-      {
+    "priceQuotes": [{
         "id": 0,
         "supplierAbbreviation": "上海",
         "quoteNumber": 227,
@@ -593,7 +586,8 @@
         "paymentChannel": "上海",
         "currency": "USD",
         "deliveryType": "广东",
-        "deliveryCost": 1537.66
+        "deliveryCost": 1537.66,
+        "imageFileName": "quote05.png"
       },
       {
         "id": 1,
@@ -615,7 +609,8 @@
         "paymentChannel": "四川",
         "currency": "USD",
         "deliveryType": "四川",
-        "deliveryCost": 5728.05
+        "deliveryCost": 5728.05,
+        "imageFileName": "quote06.png"
       },
       {
         "id": 2,
@@ -637,7 +632,8 @@
         "paymentChannel": "四川",
         "currency": "USD",
         "deliveryType": "上海",
-        "deliveryCost": 3865.08
+        "deliveryCost": 3865.08,
+        "imageFileName": "quote07.png"
       }
     ]
   },
@@ -666,8 +662,7 @@
     "isTestMaterial": true,
     "isOtherReason": false,
     "otherReasoNote": "pariatur cupidatat aute cupidatat",
-    "deliveryDetails": [
-      {
+    "deliveryDetails": [{
         "id": 0,
         "supplier": "北京",
         "quoteNumber": 162,
@@ -682,8 +677,7 @@
         "paymentType": "四川",
         "excludingTaxAtFactory": 5271.76,
         "includingTaxAtFactory": 8066.48,
-        "detailItems": [
-          {
+        "detailItems": [{
             "id": 0,
             "supplier": "四川",
             "quoteNumber": 704,
@@ -764,8 +758,7 @@
         "paymentType": "广东",
         "excludingTaxAtFactory": 5157.38,
         "includingTaxAtFactory": 5861.1,
-        "detailItems": [
-          {
+        "detailItems": [{
             "id": 0,
             "supplier": "广东",
             "quoteNumber": 690,
@@ -800,8 +793,7 @@
         ]
       }
     ],
-    "priceQuotes": [
-      {
+    "priceQuotes": [{
         "id": 0,
         "supplierAbbreviation": "上海",
         "quoteNumber": 23,
@@ -821,7 +813,8 @@
         "paymentChannel": "四川",
         "currency": "USD",
         "deliveryType": "四川",
-        "deliveryCost": 4649.34
+        "deliveryCost": 4649.34,
+        "imageFileName": "quote08.png"
       },
       {
         "id": 1,
@@ -843,7 +836,8 @@
         "paymentChannel": "广东",
         "currency": "USD",
         "deliveryType": "北京",
-        "deliveryCost": 6719.64
+        "deliveryCost": 6719.64,
+        "imageFileName": "quote09.png"
       }
     ]
   }

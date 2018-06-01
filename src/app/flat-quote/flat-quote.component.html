@@ -1,2 +1,42 @@
-<div>flat-quote works!</div>
-<div>quotesData: <pre>{{ quotesData | json }}</pre></div>
+<div class="row">
+  <div class="col-md-9">
+    <p-table
+      [columns]="cols"
+      [value]="quotesData"
+      dataKey="id"
+      [resizableColumns]="true"
+      selectionMode="single"
+      [(selection)]="selectedQuote"
+      (onRowSelect)="onRowSelect($event)"
+      (onRowUnselect)="onRowUnselect($event)"
+      >
+      <ng-template pTemplate="caption">
+        <span class="text-white">报价单</span>
+      </ng-template>
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th *ngFor="let col of columns" pResizableColumn>
+            {{ col.header }}
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr [pSelectableRow]="rowData">
+          <td *ngFor="let col of columns" class="ui-resizable-column">
+            <div
+              [class.text-center]="helper.isBoolean(rowData[col.field])"
+              [innerHTML]="helper.getCustomRender(rowData[col.field])"></div>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <img *ngIf="selectedQuote" class="card-img-top"
+        src="./assets/images/{{ selectedQuote.imageFileName }}"
+        width="100%"
+        >
+    </div>
+  </div>
+</div>

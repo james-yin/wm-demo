@@ -1,19 +1,15 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md border">
-      <app-flat-summary
-        (rowSelect)="onSummaryRowSelect($event)"></app-flat-summary>
+    <div class="col-md">
+      <app-flat-summary (rowSelect)="onSummaryRowSelect($event)"></app-flat-summary>
     </div>
-    <div class="col-md border">
+    <div class="col-md">
       <app-flat-detail></app-flat-detail>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-9 border">
+  <div class="row mt-2">
+    <div class="col-md">
       <app-flat-quote></app-flat-quote>
-    </div>
-    <div class="col-md border">
-      <app-flat-image></app-flat-image>
     </div>
   </div>
 </div>
