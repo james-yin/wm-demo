@@ -18,6 +18,7 @@ export class FlatQuoteComponent implements OnInit {
 
   populateData(quotesData) {
     this.quotesData = quotesData;
+    this.selectedQuote = null;
   }
 
   onRowSelect(event) {}

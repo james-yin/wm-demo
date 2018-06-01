@@ -2,7 +2,6 @@
   [value]="detailData"
   dataKey="id"
   [resizableColumns]="true"
-  selectionMode="single"
   [(selection)]="selectedDetail"
   (onRowSelect)="onRowSelect($event)"
   rowExpandMode="single">
@@ -18,7 +17,7 @@
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-rowData let-expanded="expanded" let-columns="columns">
-    <tr [pSelectableRow]="rowData">
+    <tr>
       <td style="padding: 0">
         <a href="#" [pRowToggler]="rowData">
           <i [ngClass]="expanded ?
